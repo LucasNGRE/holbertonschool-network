@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # Sauvegarder le fichier hosts avant de le modifier
 sudo cp /etc/hosts /etc/hosts.backup
 

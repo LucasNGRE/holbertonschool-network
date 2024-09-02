@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Sauvegarder le fichier hosts avant de le modifier
+sudo cp /etc/hosts /etc/hosts.backup
+
+# Modifier l'entrée pour localhost et facebook.com
+sudo sed -i '/127.0.0.1\s\+localhost/ c\127.0.0.2 localhost' /etc/hosts
+
+# Ajouter l'entrée pour facebook.com à la fin du fichier
+echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts > /dev/null
+
+echo "Configuration mise à jour. Assurez-vous de restaurer /etc/hosts si nécessaire."
